@@ -1,3 +1,7 @@
 class ApplicationController < ActionController::Base
-  def index; end
+  include ApplicationHelper
+  def index
+    @movies = Movie.all
+    # render json: @movies and return
+  end
 end

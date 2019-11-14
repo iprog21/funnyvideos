@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
        <%= fa_icon "home", text: 'Funny Movies' %>
       </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +9,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Username">
-        <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login/Register</button>
-      </form>
+      <% if current_user.nil? %>
+        <%= render partial: 'partials/form' %>
+      <% else %>
+        <%= render partial: 'partials/logged_in' %>
+      <% end %>
+     
     </div>
   </nav>

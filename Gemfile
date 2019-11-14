@@ -72,3 +72,11 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem "font-awesome-rails"
+
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'youtube_rails'
+
+gem 'video_info', '~> 2.6', '>= 2.6.1'
+
+gem 'yt', '~> 0.32.0'

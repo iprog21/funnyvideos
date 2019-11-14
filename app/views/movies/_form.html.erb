@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <div class="card mt-5">
+        <div class="card-body">
+            <%= form_with(model: movie, local: true) do |form| %>
+            <fieldset>
+              <legend>Share a Youtube movie</legend>
+              <%= form.label :url, 'Youtube URL:' %>
+              <%= form.text_field :url, class: 'form-control' %>
+              <button class="btn btn-outline-success btn-block mt-2" type="submit">Share</button>
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
+  </div>
+  <div class="col"></div>
+</div>

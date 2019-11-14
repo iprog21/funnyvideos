@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col">
+      <br><br>
+      <% @movies.each do |movie| %>
+        <div class="row mb-3">
+          <div class="col">
+            <%= YouTubeRails.youtube_embed_url(movie.url, 420, 315).html_safe  %>
+          </div>
+          <div class="col">
+            <% 
+              # VideoInfo.provider_api_keys =  { youtube: 'AIzaSyAj1Pj6oUOjQOXDA4Vvr3E9svVIu_AyjmQ' }
+              video = Yt::Video.new id: YouTubeRails.extract_video_id(movie.url)  
+              # video = VideoInfo.new(movie.url)
+            %>
+            <h5 class="text-danger"><%= video.title %></h5>
+            <p class="m-0">
+              Shared by: <strong><%= movie.user.email %></strong>
+            </p>
+            <p class="m-0">
+              <span class="mr-2"><%= video.like_count %>   <%= fa_icon "thumbs-o-up" %></span>
+              <span><%= video.dislike_count %>   <%= fa_icon "thumbs-o-down" %></span>
+            </p>
+            <p>
+              <label for="description">Description:</label> <br>
+              <%= truncate(video.description, length: 50, omission: '... (continued)')  %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
