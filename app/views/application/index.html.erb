@@ -4,7 +4,7 @@
       <% @movies.each do |movie| %>
         <div class="row mb-3">
           <div class="col">
-            <%= YouTubeRails.youtube_embed_url(movie.url, 420, 315).html_safe  %>
+            <%= YouTubeRails.youtube_embed_url(movie.url, 420, 315, ssl: true).html_safe  %>
           </div>
           <div class="col">
             <% 
