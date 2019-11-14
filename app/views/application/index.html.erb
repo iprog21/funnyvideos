@@ -8,9 +8,7 @@
           </div>
           <div class="col">
             <% 
-              # VideoInfo.provider_api_keys =  { youtube: 'AIzaSyAj1Pj6oUOjQOXDA4Vvr3E9svVIu_AyjmQ' }
               video = Yt::Video.new id: YouTubeRails.extract_video_id(movie.url)  
-              # video = VideoInfo.new(movie.url)
             %>
             <h5 class="text-danger"><%= video.title %></h5>
             <p class="m-0">
