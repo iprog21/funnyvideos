@@ -1,3 +1,3 @@
 Yt.configure do |config|
-  config.api_key = 'AIzaSyAj1Pj6oUOjQOXDA4Vvr3E9svVIu_AyjmQ'
+  config.api_key = Figaro.env.youtube_api
 end
